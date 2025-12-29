@@ -1,33 +1,75 @@
-div .h1{
-
-}
-.header h1 span{
-    color: #a2d30fd6;
-}
-div.container{
-    display: flex;
-    padding: 10vh;
-}
-div.left, .right{
-    width: 50%;
-    padding: 30px;
-}
-.left{
-    width: 50%;
-    padding: 30px;
-    background-image: url("caus.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.title{
-    margin-left: 40px;
+/* Basic layout and responsive styles */
+*{box-sizing: border-box}
+body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height:1.4;
+    background: #f7f7f7;
+    color:#222;
 }
 
 .btmk{
-     display: flex;
-     align-items: center;
-     padding: 30px; 
-     background-color: rgba(143, 146, 147, 0.639); 
-     color: white;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:1rem 1.25rem;
+    background-color: rgba(143,146,147,0.64);
+    color:#fff;
+}
+.profile-pic{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    flex:0 0 auto;
+}
+.title{display:flex;flex-direction:column}
+.name{margin:0;font-size:1.2rem}
+.accent{color:rgba(255,0,0,0.7)}
+.contact{margin:0.25rem 0}
+
+.container{
+    display:flex;
+    gap:2rem;
+    padding:3rem 2rem;
+    max-width:1100px;
+    margin:0 auto;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+.left, .right{
+    flex:1 1 320px;
+    padding:1rem;
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.left{background-image: url("caus.jpg"); background-repeat:no-repeat;background-position:center;background-size:cover}
+
+.bold{font-weight:600}
+
+.skill{background:#ddd;border-radius:10px;width:100%;height:18px;overflow:hidden;margin-bottom:0.75rem}
+.skill-fill{height:100%;background:linear-gradient(90deg,#4caf50,#2e7d32);border-radius:10px}
+
+section h2{margin-top:0}
+
+footer{padding:1rem;text-align:center}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+    .container{padding:2rem;gap:1rem}
+    .profile-pic{width:72px;height:72px}
+}
+
+@media (max-width:600px){
+    .btmk{padding:0.75rem;gap:0.75rem}
+    .container{flex-direction:column;padding:1rem}
+    .name{font-size:1.1rem}
+    .left, .right{padding:0.75rem}
+}
+
+@media (prefers-color-scheme:dark){
+    body{background:#0f1720;color:#e6eef8}
+    .left,.right{background:rgba(255,255,255,0.03)}
+    .btmk{background:rgba(255,255,255,0.04)}
 }
